@@ -1,23 +1,22 @@
-
 // function for add extra cost
-function addExtraCost(btnId, textId, price ){
+function addExtraCost(btnId, textId, price, getTotalCost ){
     document.getElementById(btnId).addEventListener('click', function(){
         const extraPrice = document.getElementById(textId);
         extraPrice.innerText = price;
-        getTotalCost();
+        getTotalCost()
+        return extraPrice;
     })
 }
 // add memory cost 
-addExtraCost('eight-btn', 'extra-memory', 0);
+addExtraCost('eight-btn', 'extra-memory', 0,getTotalCost);
 addExtraCost('Sixteen-btn', 'extra-memory', 180);
 // add storage cost
 addExtraCost('256-btn', 'extra-storage' ,0);
 addExtraCost('512-btn', 'extra-storage' ,100);
 addExtraCost('1-btn', 'extra-storage' ,180);
 // add delivery cost
-addExtraCost('free-btn', 'extra-delivery' , 0);
-addExtraCost('express-btn', 'extra-delivery' , 20); 
-
+addExtraCost('free-btn', 'delivery-Cost' ,0);
+addExtraCost('express-btn', 'delivery-Cost' ,20); 
 // function for  total price  
 function getTotalCost(){
     const memoryTotal = document.getElementById('extra-memory');
